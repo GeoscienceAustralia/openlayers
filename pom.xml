@@ -72,6 +72,7 @@
                 <version>1.7</version>
                 <executions>
                     <execution>
+                        <id>unzip</id>
                         <phase>process-resources</phase>
                         <goals><goal>run</goal></goals>
                         <configuration>
@@ -87,6 +88,18 @@
                                         <include name="art/" />
                                     </fileset>
                                 </move>
+                            </target>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>patch</id>
+                        <phase>process-classes</phase>
+                        <goals><goal>run</goal></goals>
+                        <configuration>
+                            <target>
+                                <echo message="patching"/>
+                                <patch patchfile="./OpenLayers.js.patch" originalfile="${destDir}/OpenLayers.js"/>
+                                <patch patchfile="./OpenLayers.debug.js.patch" originalfile="${destDir}/OpenLayers.debug.js"/>
                             </target>
                         </configuration>
                     </execution>
