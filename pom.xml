@@ -42,7 +42,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <upstream.version>2.13.1</upstream.version>
-        <upstream.url>http://www.openlayers.org/download</upstream.url>
+        <upstream.url>http://github.com/openlayers/ol2/releases/download/release-${upstream.version}</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
     </properties>
 
